@@ -60,16 +60,38 @@ public:
     int x;
     int y;
 
+    // Constructor
     Coordinate(int i = 0, int j = 0)
     {
        x = i; y = j;
     }
 
+    // This is a "copy constructor." It is actually identical to the default
+    // copy constructor that C++ provides; we only include it for teaching
+    // purposes.
+    // Example:
+    //     Coordinate a(1, 2);
+    //     Coordinate b = a;  // Copy constructor gets called to construct `b`
+    //                        // The argument to the constructor is a const
+    //                        // reference to `a`
+    // The copy constructor also gets called when you pass a Coordinate as an
+    // argument to a function, and when your return a Coordinate from a
+    // function.
+    // See <http://www.cplusplus.com/articles/y8hv0pDG/> if you want to learn
+    // more about copy constructors and assignment operators.
     Coordinate(const Coordinate &other)
     {
         x = other.x; y = other.y;
     }
 
+    // This is an "assignment operator." It is actually identical to the default
+    // assignment operator that C++ provides; we only include it for teaching
+    // purposes.
+    // Example:
+    //     Coordinate a(1, 2);
+    //     Coordinate b(2, 3);
+    //     b = a;  // Assignment operator gets called with a const reference
+    //             // to `a` as the argument. Assigns to b.
     Coordinate& operator= (const Coordinate &source)
     {
         x = source.x; y = source.y;
